@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import me.eun.mapper.BoardMapper;
+import me.eun.mapper.Criteria;
 import me.eun.model.Board;
 
 @Service
@@ -16,10 +17,7 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private BoardMapper boardMapper;
 	
-	@Override
-	public List<Board> getList() {
-		return boardMapper.getList();
-	}
+
 
 	@Override
 	public Board get(Long bno) {
@@ -39,6 +37,16 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void remove(Long bno) {
 		boardMapper.delete(bno);
+	}
+
+	@Override
+	public List<Board> getList(Criteria criteria) {
+		return boardMapper.getList(criteria);
+	}
+
+	@Override
+	public int totalCount() {
+		return boardMapper.totalCount();
 	}
 
 }

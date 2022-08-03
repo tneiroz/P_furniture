@@ -9,7 +9,7 @@
 	<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     	<li class="nav-item">
         	<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-           		<span>📈상품에 관한 내용은 여기를 클릭 하세요.📈</span>
+           		<span>✅상품에 관한 내용은 여기를 클릭 하세요.✅</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
             	<div class="bg-white py-2 collapse-inner rounded">

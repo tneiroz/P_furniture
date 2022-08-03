@@ -18,8 +18,8 @@ public class BoardMapperTest {
 	@Test 
 	@Ignore
 	public void getListTest() {
-	List<Board> list = boardmapper.getList();
-	assertEquals(4, list.size());
+//	List<Board> list = boardmapper.getList();
+//	assertEquals(4, list.size());
 	}
 	
 	@Test

@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import me.eun.mapper.Criteria;
 import me.eun.model.Board;
+import me.eun.model.PageMarker;
 import me.eun.service.BoardService;
 
 @Controller
@@ -20,8 +22,11 @@ public class BoardController {
 
 
 	@GetMapping("/list")
-	public String boarList(Model model) {
-		model.addAttribute("list", service.getList());
+	public String boarList(Model model , Criteria criteria) {
+		PageMarker pageMarker = new PageMarker(criteria, service.totalCount());
+		pageMarker.setCriteria(criteria);
+		model.addAttribute("list", service.getList(criteria));
+		model.addAttribute("pageMaker",pageMarker);
 		return "board/list";
 	}
 	

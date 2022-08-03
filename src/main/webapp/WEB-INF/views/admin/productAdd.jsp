@@ -84,8 +84,6 @@ $("#addBtn").click(function(e){
 	 /* 최종 검사 */
     if(nameCheck && priceCheck && instockCheck){
     	$("#productForm").submit();   
-   
-    	
     } else{
         return;
     }
