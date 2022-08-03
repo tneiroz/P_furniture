@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+
+ 
+/* 로그인 실패시 경고글 */
+.login_warn{
+    margin-top: -19px;
+    text-align: center;
+    color : red;
+}
+ 

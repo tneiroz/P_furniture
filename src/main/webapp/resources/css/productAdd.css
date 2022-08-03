@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+/* 상품등록 공백 오류 메세지*/
+.inputArea span{
+    color : red;
+    display: none;
+}
