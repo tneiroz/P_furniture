@@ -4,10 +4,26 @@
 
 <!-- 상품 등록 -->
 <insert id="productAdd">
+	<selectKey resultType="int" keyProperty="productCode" order="AFTER">
+  			SELECT LAST_INSERT_ID()
+	</selectKey>
+
 insert into product_tbl(productName, productPrice, productInstock) values(#{productName}, #{productPrice}, #{productInstock});
 </insert>
 
+<!-- 상품 목록 -->
+<select id ="productGetList" resultType="me.eun.model.ProductVO">
+	select * from product_tbl; 
+</select>
 
+<!-- 상품 상세 조회 -->
+<select id="productInfo" resultType="me.eun.model.ProductVO">
+	select * from product_tbl where productCode = #{productCode}
+</select>
 
+<!-- 이미지 등록 -->
+<insert id="imageAdd">
+insert into productImg_tbl values ( #{productCode}, #{fileName}, #{uploadPath}, #{uuid})
+</insert>
 
 </mapper>

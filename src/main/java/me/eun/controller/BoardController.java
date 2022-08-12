@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import me.eun.mapper.Criteria;
 import me.eun.model.Board;
+import me.eun.model.Criteria;
 import me.eun.model.PageMarker;
 import me.eun.service.BoardService;
 

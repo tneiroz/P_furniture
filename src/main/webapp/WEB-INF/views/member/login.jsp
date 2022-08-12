@@ -12,7 +12,6 @@
    height: 300px;">
 </div>
 <!-- Background image  -->
-
 <div class="card mx-4 mx-md-5 shadow-5-strong"
 	 style="margin-top: -100px;
             background: hsla(0, 0%, 100%, 0.8);

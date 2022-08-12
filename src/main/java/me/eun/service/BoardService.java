@@ -2,8 +2,8 @@ package me.eun.service;
 
 import java.util.List;
 
-import me.eun.mapper.Criteria;
 import me.eun.model.Board;
+import me.eun.model.Criteria;
 
 public interface BoardService {
 	List<Board> getList(Criteria criteria);

@@ -1,4 +1,4 @@
-package me.eun.mapper;
+package me.eun.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,7 +8,10 @@ import lombok.ToString;
 @Getter @Setter @ToString
 @AllArgsConstructor
 public class Criteria {
+	
+	/*현재 페이지 번호*/
 	int page;
+	/*한 페이지당 보일 게시글 수 */
 	int perPageNum;
 	
 	public Criteria() {

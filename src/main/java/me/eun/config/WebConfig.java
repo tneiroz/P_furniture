@@ -1,6 +1,9 @@
 package me.eun.config;
 
 import javax.servlet.Filter;
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration.Dynamic;
+import javax.servlet.annotation.MultipartConfig;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -30,4 +33,10 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 		return new Filter[] {filter};
 	}
 
+	@Override
+	protected void customizeRegistration(Dynamic registration) {
+		MultipartConfigElement multipartConfig
+		= new MultipartConfigElement("C:\\upload\\temp",20971520,41943040,20971520);
+		registration.setMultipartConfig(multipartConfig);
+	}
 }

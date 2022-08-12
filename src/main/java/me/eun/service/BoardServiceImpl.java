@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import me.eun.mapper.BoardMapper;
-import me.eun.mapper.Criteria;
 import me.eun.model.Board;
+import me.eun.model.Criteria;
 
 @Service
 public class BoardServiceImpl implements BoardService {

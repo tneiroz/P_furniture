@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-            
+        </section>    
            
 
 <%@ include file ="layout/footer.jsp"%>

@@ -2,7 +2,6 @@ package me.eun.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.eun.mapper.Criteria;
 
 @Getter @Setter
 public class PageMarker {

@@ -3,7 +3,6 @@
 <%@ include file ="../layout/header.jsp"%>
 
 
-
-
 <h2>마이페이지</h2>
+${member}
 <%@ include file ="../layout/footer.jsp"%>
