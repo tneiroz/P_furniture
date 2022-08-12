@@ -41,10 +41,10 @@ public class ProductMapperTest {
 		
 		AttachImageVO vo = new AttachImageVO();
 		
-		vo.setProductCode(1);
-		vo.setFileName("test1112");
-		vo.setUploadPath("test2332");
-		vo.setUuid("test42312");
+		vo.setProductCode(2);
+		vo.setFileName("test222222");
+		vo.setUploadPath("test2222");
+		vo.setUuid("test22222");
 		
 		mapper.imageAdd(vo);
 		

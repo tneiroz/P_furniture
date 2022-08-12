@@ -19,7 +19,17 @@ public class ProductServiceImpl implements ProductService {
 	/*상품 등록*/
 	@Override
 	public void productAdd(ProductVO product) throws Exception {
+		
 		productMapper.productAdd(product);
+		/*만약 상품 등록할때 사진이 없다면 그대로 return 값을 반환*/
+		if(product.getImageList() == null || product.getImageList().size() <= 0) {
+			return;
+		}
+		product.getImageList().forEach(attach ->{
+			attach.setProductCode(product.getProductCode());
+			productMapper.imageAdd(attach);
+			
+		});
 	}
 	/*상품 목록*/
 	@Override
