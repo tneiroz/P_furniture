@@ -37,4 +37,13 @@
   <delete id="delete">
 		delete from board_tbl where bno = #{bno}
   </delete>
+  
+  <select id="getBoardNumber" resultType="me.eun.model.Board">
+		select bno, title from board_tbl
+		where bno = #{bno}
+	
+	
+	</select>
+  
+  
 </mapper>

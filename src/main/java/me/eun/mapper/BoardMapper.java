@@ -12,4 +12,7 @@ public interface BoardMapper {
 	void update (Board board);
 	void delete (Long bno);
 	int totalCount();
+	
+	/* 댓글 작성시 게시글 번호 */
+	public Board getBoardNumber (Long bno);
 }

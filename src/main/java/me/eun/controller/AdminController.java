@@ -76,8 +76,8 @@ public class AdminController {
     
     /*상품 상세 조회 페이지*/
     @GetMapping("/productInfo")
-    public String productInfo(String productName, Model model) {
-    	model.addAttribute("productInfo",productService.productInfo(productName));
+    public String productInfo(int productCode, Model model) {
+    	model.addAttribute("productInfo",productService.productInfo(productCode));
     	return "admin/productInfo";
     }
   

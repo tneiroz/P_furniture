@@ -48,7 +48,7 @@
       </div>
     </div>
 </section>
-
+<%@ include file ="../layout/footer.jsp"%>
 <script>
  
 /*      로그인 버튼 클릭 메서드 

@@ -15,10 +15,11 @@ public interface ProductMapper {
 	public List<ProductVO> productGetList (Criteria criteria);
 	
 	/*상품조회*/
-	public ProductVO productInfo (String productName);
+	public ProductVO productInfo (int productCode);
 	
 	/* 이미지 등록 */
 	public void imageAdd(AttachImageVO vo);
+
 
 
 }

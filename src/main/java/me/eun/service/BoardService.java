@@ -12,4 +12,7 @@ public interface BoardService {
 	void modify (Board board);
 	void remove (Long bno);
 	int totalCount();
+	
+	/* 댓글 작성시 게시글 번호 */
+	public Board getBoardNumber (Long bno);
 }

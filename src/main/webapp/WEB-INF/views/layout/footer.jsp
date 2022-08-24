@@ -7,7 +7,7 @@
   		<div class="container px-4 px-lg-5">
         <a class="navbar-brand" href="${contextPath}">be comfortable</a>
           <ul class="navbar-nav left">
-              <li class="nav-item "><a class="nav-link" href="#!">About</a></li>
+              <li class="nav-item "><a class="nav-link" href="${contextPath}/about/products">About</a></li>
               <li class="nav-item"><a class="nav-link" href="${contextPath}/notice/main">Notice</a></li>
               <li class="nav-item"><a class="nav-link" href="${contextPath}/board/list">Q & A</a></li>
           </ul>  

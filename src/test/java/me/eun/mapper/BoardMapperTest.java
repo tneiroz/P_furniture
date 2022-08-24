@@ -23,6 +23,7 @@ public class BoardMapperTest {
 	}
 	
 	@Test
+	@Ignore
 	public void getTest() {
 		boardmapper.get(1L);
 		
@@ -41,12 +42,13 @@ public class BoardMapperTest {
 		assertEquals(board.getWriter(),getBoard.getWriter());
 		assertEquals(board.getBno(),getBoard.getBno());
 			
+			
 	}
 	
 	@Test
 	@Ignore
 	public void updateTest() {
-		Board board = boardmapper.get(1L);
+		Board board = boardmapper.get(2L);
 		board.setTitle("1번 게시글 제목 수정");
 		board.setContent("1번 게시글 내용 수정");
 		boardmapper.update(board);

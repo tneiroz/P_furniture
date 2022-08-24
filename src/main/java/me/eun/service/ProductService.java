@@ -13,5 +13,5 @@ public interface ProductService {
 	List<ProductVO> productGetList(Criteria criteria) throws Exception;
 	
 	/*상품상세조회*/
-	public ProductVO productInfo(String productCode);
+	public ProductVO productInfo(int productCode);
 }

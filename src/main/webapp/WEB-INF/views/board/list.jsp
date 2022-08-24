@@ -3,6 +3,7 @@
 <%@ include file="../layout/header.jsp" %>    
 	
 	<div class="container">
+	  <a href="register">글쓰기</a>
 		<table class="table">
 			<tr> 
 				<th> 번호 </th>
@@ -19,12 +20,12 @@
 						</td>
 					<td>${b.writer}</td>
 					<td>
-					 	<fmt:parseDate var = "regDate" value="${b.regDate}" pattern="yyyy-MM-dd'T'HH:mm:ss" type="both"/>
-					 	<fmt:formatDate value="${regDate}" pattern="yyyy년MM월dd일"/> 
+					 	<fmt:parseDate var = "regDate" value="${b.regDate}" pattern="yyyy-MM-dd'T'HH:mm" type="both"/>
+					 	<fmt:formatDate value="${regDate}" pattern="yyyy년MM월dd일 HH시 mm분"/> 
 					</td>
 					<td>
-						<fmt:parseDate var = "updateDate" value="${b.updateDate}" pattern="yyyy-MM-dd'T'HH:mm:ss" type="both"/>
-					 	<fmt:formatDate value="${updateDate}" pattern="yyyy년MM월dd일"/> 
+						<fmt:parseDate var = "updateDate" value="${b.updateDate}" pattern="yyyy-MM-dd'T'HH:mm" type="both"/>
+					 	<fmt:formatDate value="${updateDate}" pattern="yyyy년MM월dd일 HH시 mm분"/> 
 					</td>
 				</tr>	
 			</c:forEach>	

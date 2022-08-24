@@ -49,4 +49,9 @@ public class BoardServiceImpl implements BoardService {
 		return boardMapper.totalCount();
 	}
 
+	@Override
+	public Board getBoardNumber(Long bno) {
+		return boardMapper.getBoardNumber(bno);
+	}
+
 }

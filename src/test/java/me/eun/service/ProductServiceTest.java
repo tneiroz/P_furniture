@@ -51,8 +51,8 @@ public class ProductServiceTest {
     @Test
     @Ignore
     public void productInfoTest() {
-		String productName = "플랏사";
-		ProductVO result = mapper.productInfo(productName);
+		int productCode = 2;
+		ProductVO result = mapper.productInfo(productCode);
 		System.out.println("상품 조회 데이터 : " + result);
 	}
    
