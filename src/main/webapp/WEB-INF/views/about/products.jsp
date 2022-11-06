@@ -2,10 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
 
-<h2>상품 페이지</h2>
-
-
-
 <div class="container px-4 px-lg-5 mt-5">
 	<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 		<c:forEach items="${list}" var="list">
@@ -13,9 +9,16 @@
 				<div class="card h-100">
 					<!-- Product image-->
 					 <form id="image_form">
-						<div class="image_wrap" data-productCode="${list.imageList[0].productCode}" data-path="${list.imageList[0].uploadPath}" data-uuid="${list.imageList[0].uuid}" data-filename="${list.imageList[0].fileName}">
+					 	<c:if test="${not empty list.imageList}">
+						<div class="image_wrap" data-productCode="${list.productCode}" data-path="${list.imageList[0].uploadPath}" data-uuid="${list.imageList[0].uuid}" data-filename="${list.imageList[0].fileName}">
 							<img class="card-img" src="" alt="...">
 						</div>	
+						</c:if>
+						<c:if test="${empty list.imageList}">
+						<div>
+							<img class="card-img" src="${contextPath}/resources/image/ProductNoImage.png" alt="이미지없음">
+						</div>
+						</c:if>
 					 </form>		
 					<!-- Product details-->
 					<div class="card-body p-4">
@@ -43,24 +46,21 @@
 <%@ include file="../layout/footer.jsp"%>
 
 <script>
-$(document). ready(function(){
+$(document).ready(function(){
 	/* 이미지 삽입 */
 	let image_form = $('#image_form');
+	console.log(contextPath);
 	$("#image_form .image_wrap").each(function(i, obj){
 		const bobj = $(obj);
-		if(bobj.data("productCode")){
-		const uploadPath = bobj.data("path");
-		const uuid = bobj.data("uuid");
-		const fileName = bobj.data("filename");
+	
+		let productCode = bobj.data("productcode");
 		
-		const fileCallPath = encodeURIComponent(uploadPath + "/s_" + uuid + "_" + fileName);
-		
-		$(this).find("img").attr('src', '/display?fileName=' + fileCallPath);
-		
-		} else {
-			$(this).find("img").attr('src', contextPath+'/resources/image/ProductNoImage.png');
-		}
-		
+		let uploadPath = bobj.data("path");
+		let uuid = bobj.data("uuid");
+		let fileName = bobj.data("filename");
+		let fileCallPath = encodeURIComponent(uploadPath +"/" + uuid + "_"+ fileName);
+		console.log(fileCallPath);
+		$(this).find("img").attr('src', contextPath+'/display?fileName=' + fileCallPath);
 	});
 });
 

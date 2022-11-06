@@ -14,6 +14,8 @@ public class Criteria {
 	/*한 페이지당 보일 게시글 수 */
 	int perPageNum;
 	
+	
+	
 	public Criteria() {
 		this.page = 1;
 		this.perPageNum = 10;
@@ -22,4 +24,6 @@ public class Criteria {
 	public int getpageStart() {
 		return (this.page-1)*perPageNum;
 	}
+	
+	
 }

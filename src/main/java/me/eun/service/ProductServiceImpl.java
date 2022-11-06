@@ -45,6 +45,7 @@ public class ProductServiceImpl implements ProductService {
 		list.forEach(product -> {
 			int productCode = product.getProductCode();
 			List<AttachImageVO> imageList = attachMapper.getAttachList(productCode);
+			System.out.println(imageList);
 			product.setImageList(imageList);
 		});
 		return list;

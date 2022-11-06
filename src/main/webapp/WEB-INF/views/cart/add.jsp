@@ -6,6 +6,5 @@
 ${info }
 ${cart }
 ${member.memberName}
-
 <!-- <button type="reset">뒤로</button>  -->
 <%@ include file ="../layout/footer.jsp"%>

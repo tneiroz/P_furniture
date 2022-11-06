@@ -1,5 +1,7 @@
 package me.eun.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +14,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import me.eun.model.Board;
 import me.eun.model.Criteria;
 import me.eun.model.PageMarker;
+import me.eun.model.ReplyDTO;
 import me.eun.service.BoardService;
+import me.eun.service.ReplyService;
 
 @Controller
 @RequestMapping("/board")
@@ -20,6 +24,9 @@ public class BoardController {
 
 	@Autowired
 	private BoardService service;
+	
+	@Autowired
+	private ReplyService replyService;
 
 
 	@GetMapping("/list")
@@ -33,7 +40,12 @@ public class BoardController {
 	
 	@GetMapping("/get")
 	public String get(Long bno, Model model) {
+		List<ReplyDTO> list = replyService.getReplyList(bno);
+		
+		model.addAttribute("replyList", list);
+		
 		model.addAttribute("board",service.get(bno));
+		
 		return "board/get";
 	}
 	

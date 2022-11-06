@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
+<link rel="stylesheet" href="${contextPath}/resources/css/get.css">
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="pricipal.memberName" var="memberName"/>
 </sec:authorize>	
@@ -28,7 +29,7 @@
 		</div> <!-- card-body end -->
 		<div class="card-footer d-flex justify-content-between">
 			<div>
-			<sec:authorize access="#board.writer == #memberName or  #member.adminCk == '1'"><!-- 권한  or로  -->
+			<sec:authorize access="#board.writer == #memberName">
 				<button type="button" class="btn btn-outline-warning modify">수정</button>
 				<button type="button" class="btn btn-outline-danger remove">삭제</button>
 			</sec:authorize>	
@@ -54,11 +55,33 @@
 				</div>	
 			</c:if>
 		</form>
+			<ul class="reply_content_ul">
+					<c:forEach items="${replyList}" var="r">
+					<li>
+						<div class="comment_wrap">
+							<div class="reply_top">  
+								회원이름: <span class="id_span">${r.memberName }</span> <br>
+								댓글 작성 날짜 : <fmt:parseDate var = "regDate" value="${board.regDate}" pattern="yyyy-mm-dd'T'HH:mm" type="both"/>
+								<fmt:formatDate value="${regDate}" pattern="yyyy년MM월dd일"/> 
+							</div>
+							<div class="reply_bottom"> 
+								<div class="reply_bottom_txt">
+								댓글내용: ${r.content } 
+								</div>
+							</div>
+						</div>
+					</li>
+					</c:forEach>
+			</ul>
 	</div> <!-- reply_container end -->
-	
-	
-	
-</div> <!-- container end -->
+
+
+
+
+
+
+</div> <!-- 전체 container end -->
+
 <script>
 
 	$(function(){
@@ -97,18 +120,32 @@
 			e.preventDefault();		
 			const bno = '${board.bno}';
 			const memberName = '${member.memberName}';
-	   
-			let popUrl = contextPath +"/board/insertReply/" + bno + "?memberName=" + memberName;
-			console.log(popUrl);
-			let popOption = "width = 490px, height=490px, top=490px, left=490px, scrollbars=yes";
-			
-			window.open(popUrl,"댓글 쓰기",popOption);
-		
-		});
-	})
+	   		
+			$.ajax({
+				data : {
+					bno : bno,
+					memberName : memberName
+				},
+				url : contextPath+'/reply/check',
+				type : 'POST',
+				success : function(result){
+					if(result === '1'){
+						alert("이미 댓글을 등록하셨습니다.")
+					} else if(result === '0'){
+						let popUrl =  contextPath +"/board/insertReply/"+ bno + "?memberName=" + memberName;
+						console.log(popUrl);
+						let popOption = "width = 490px, height=490px, top=300px, left=300px, scrollbars=yes";
+						
+						window.open(popUrl,"댓글 쓰기",popOption);							
+					}
+				}
+			});
+		}); 
+	})//댓글작성 close
 
-})
+	
 
+});  //$(function(){ end //목록~ 이하 부분 
 
 </script>
 

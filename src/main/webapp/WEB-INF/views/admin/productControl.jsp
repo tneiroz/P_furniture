@@ -34,7 +34,7 @@
   			<td>
   				<c:out value="${p.productInstock}"></c:out>
   			</td>
-	    	</c:forEach>
+	    </c:forEach>
 	    </tbody>
 	  </table>
 	</form>	

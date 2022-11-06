@@ -53,23 +53,18 @@ $("#addBtn").click(function(e){
 	productForm.attr('action', '${contextPath}/admin/productAdd')
 	productForm.attr('method', 'post')
 
-	/*검사 통과 유무 변수 */
 	let nameCheck = false;  //상품 이름
 	let priceCheck = false; //상품 가격
 	let instockCheck = false;//상품 재고
 
-	/*입력값 변수*/
-	//<input> 태그에 쉽게 접근하기 위해 변수를 선언 및 초기화
 	let productName = $("input[name='productName']").val();  
 	let productPrice = $("input[name='productPrice']").val();  
 	let productInstock = $("input[name='productInstock']").val();  
 	
-	/*공란 경고 span 태그*/
 	let wProductName =$('#warn_productName');
 	let wProductPrice =$('#warn_productPrice');
 	let wProductInstock =$('#warn_productInstock');
 	
-	/*상품 이름 공란 체크*/
 	if(productName){
 		$("#warn_productName").css('display','none');
 		nameCheck = true;
@@ -77,7 +72,6 @@ $("#addBtn").click(function(e){
 		$("#warn_productName").css('display','block');
 		nameCheck = false;
 	}
-	/*상품 가격 공란 체크*/
 	if(productPrice){
 		$("#warn_productPrice").css('display','none');
 		priceCheck = true;
@@ -85,7 +79,6 @@ $("#addBtn").click(function(e){
     	$("#warn_productPrice").css('display','block');
     	productPrice = false;
     }
-	/*상품 재고 공란 체크*/
 	if(productInstock){
 		$("#warn_productInstock").css('display','none');
 		instockCheck = true;

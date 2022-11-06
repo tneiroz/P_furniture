@@ -7,7 +7,7 @@
   <div class="container">
     <div class="input-form-backgroud row">
       <div class="input-form col-md-12 mx-auto">
-        <h4 class="mb-3">Join With Us</h4>
+        <h4 class="mb-3">자연친화적인 가구의 시작 , Be Comfortable</h4>
         <form class="validation-form" id="joinButton" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">
@@ -57,7 +57,6 @@
       </div>
     </div>
     <footer class="my-3 text-center text-small">
-      <p class="mb-1">be Comfortable</p>
     </footer>
   </div>
   

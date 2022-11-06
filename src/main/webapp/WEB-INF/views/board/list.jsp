@@ -3,7 +3,7 @@
 <%@ include file="../layout/header.jsp" %>    
 	
 	<div class="container">
-	  <a href="register">글쓰기</a>
+	  <a href="register">게시글 작성</a>
 		<table class="table">
 			<tr> 
 				<th> 번호 </th>

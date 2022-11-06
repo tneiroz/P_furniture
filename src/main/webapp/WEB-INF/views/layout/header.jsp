@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <script src="${contextPath}/resources/js/scripts.js"></script>
 <link rel="stylesheet" href="${contextPath}/resources/css/styles.css">
+
 <script>
 let contextPath = "${contextPath}"
 </script>

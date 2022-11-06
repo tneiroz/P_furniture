@@ -44,6 +44,7 @@
 			url : contextPath +'/reply/new',
 			success : function(result){
 				window.close();
+				
 			}
 			
 		});		

@@ -1,5 +1,6 @@
 package me.eun.mapper;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ public class ReplyMapperTest {
 
 	
 	@Test
+	@Ignore
 	public void insertReplyTest() {
 		String memberName ="박정은";
 		Long bno = (long) 3;
@@ -30,4 +32,21 @@ public class ReplyMapperTest {
 		mapper.insertReply(dto);
 		
 	}
+	@Test
+	@Ignore
+	public void checkReplyTest() {
+		String memberName ="관리자";
+		Long bno=(long) 1;
+		String content = "냠냠";
+		Long rno = (long) 1;
+		
+		ReplyDTO dto = new ReplyDTO();
+		dto.setMemberName(memberName);
+		dto.setBno(bno);
+		dto.setContent(content);
+		dto.setRno(rno);
+		System.out.println(dto);
+	}
+	
+	
 }

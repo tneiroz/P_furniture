@@ -3,14 +3,20 @@
 <mapper namespace="me.eun.mapper.ReplyMapper">
 
 <!-- 댓글등록 -->
-  	<insert id="insertReply">
-  		insert into reply_tbl(bno, memberName, content) values(#{bno}, #{memberName}, #{content})
-  	</insert>
+<insert id="insertReply">
+	insert into reply_tbl(bno, memberName, content) values(#{bno}, #{memberName}, #{content})
+</insert>
+
+<!-- 댓글 유무 체크 -->
+<select id="checkReply" resultType="integer">
+	select rno from reply_tbl where bno = #{bno} and memberName = #{memberName}
+</select>
 
 
-
-
-
+<!-- 댓글 목록 -->
+<select id="getReplyList" resultType="me.eun.model.ReplyDTO">
+	select rno, bno, memberName, content, regDate from reply_tbl where bno = #{bno}
+</select>
 
 
 
